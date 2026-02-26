@@ -1,0 +1,43 @@
+body{
+ background:#1e1e1e;
+ color:white;
+ font-family:Arial;
+ margin:0;
+}
+
+.nav{
+ background:#111;
+ padding:15px;
+}
+
+.nav a{
+ color:white;
+ margin-right:15px;
+ text-decoration:none;
+}
+
+.container{
+ padding:30px;
+}
+
+input{
+ display:block;
+ margin:10px 0;
+ padding:8px;
+ width:250px;
+}
+
+button{
+ padding:8px 15px;
+ background:#4caf50;
+ border:none;
+ color:white;
+ cursor:pointer;
+}
+
+.card{
+ border:1px solid #555;
+ padding:15px;
+ margin:15px 0;
+ width:300px;
+}

@@ -1,0 +1,302 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+.dashboardViewport {
+  height: 100vh; width: 100vw;
+  background: #020408; font-family: 'Plus Jakarta Sans', sans-serif;
+  color: #fff; overflow: hidden; position: relative;
+}
+
+.glowOrb {
+  position: absolute; top: -10%; right: -5%; width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(168, 85, 247, 0.15) 0%, transparent 70%);
+  z-index: 0; pointer-events: none;
+}
+
+/* TOP NAVIGATION */
+.topNav {
+  position: fixed; top: 0; left: 0; right: 0; height: 80px;
+  z-index: 100; backdrop-filter: blur(25px);
+  background: rgba(10, 12, 18, 0.8);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  display: flex; justify-content: center;
+}
+
+.navInner {
+  width: 100%; max-width: 1400px; padding: 0 40px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+
+.brand { font-size: 22px; font-weight: 800; color: #fff; letter-spacing: -1px; }
+.brandLite { color: #a855f7; font-weight: 400; font-size: 16px; margin-left: 5px; }
+
+.centerTabs { display: flex; gap: 8px; }
+.tab, .tabActive {
+  background: transparent; border: none; padding: 10px 20px;
+  font-weight: 600; font-size: 14px; cursor: pointer; transition: 0.3s;
+  border-radius: 12px; color: rgba(255,255,255,0.4);
+}
+.tab:hover { color: #fff; background: rgba(255,255,255,0.05); }
+.tabActive { color: #fff; background: rgba(168, 85, 247, 0.15); box-shadow: 0 0 20px rgba(168, 85, 247, 0.1); }
+
+.userSection { display: flex; align-items: center; gap: 20px; }
+.userInfo { text-align: right; }
+.uName { display: block; font-size: 14px; font-weight: 700; }
+.uRole { font-size: 11px; color: rgba(255,255,255,0.4); text-transform: uppercase; }
+.navLogout {
+  padding: 8px 16px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.05); color: #fff; font-weight: 700; cursor: pointer; transition: 0.3s;
+}
+.navLogout:hover { background: #ef4444; border-color: #ef4444; }
+
+/* WORKSPACE LAYOUT */
+.workspace {
+  position: relative; z-index: 10; padding-top: 110px;
+  height: 100vh; display: flex; flex-direction: column;
+  align-items: center; width: 100%;
+}
+
+.workspaceHeader {
+  width: 100%; max-width: 1200px; padding: 0 40px; margin-bottom: 40px;
+  display: flex; justify-content: space-between; align-items: flex-end;
+}
+.workspaceHeader h1 { font-size: 42px; font-weight: 800; margin: 0; letter-spacing: -2px; }
+.workspaceHeader p { color: rgba(255,255,255,0.4); margin: 5px 0 0 0; }
+
+.summaryStats { display: flex; gap: 30px; }
+.miniStat { text-align: right; }
+.statVal { display: block; font-size: 24px; font-weight: 800; color: #a855f7; }
+.statLabel { font-size: 11px; color: rgba(255,255,255,0.4); text-transform: uppercase; font-weight: 700; }
+
+.scrollContent {
+  width: 100%; max-width: 1200px; padding: 0 40px 100px;
+  overflow-y: auto; scrollbar-width: none;
+}
+
+/* CREATE PANEL */
+.createPanel {
+  background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255,255,255,0.08);
+  padding: 30px; border-radius: 24px; margin-bottom: 40px;
+}
+.createPanel h3 { margin: 0 0 20px 0; font-size: 18px; }
+.formRow { display: flex; gap: 15px; }
+.modernInput {
+  flex: 1; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1);
+  padding: 14px 20px; border-radius: 12px; color: #fff; font-family: inherit;
+}
+.createBtn {
+  background: #a855f7; color: #fff; border: none; padding: 0 30px;
+  border-radius: 12px; font-weight: 700; cursor: pointer; transition: 0.3s;
+}
+.createBtn:hover { background: #9333ea; transform: scale(1.02); }
+
+/* CARDS */
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); gap: 24px; }
+.obsidianCard {
+  background: rgba(18, 20, 28, 0.85); backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.08); padding: 30px; border-radius: 24px;
+}
+.cardTop { display: flex; justify-content: space-between; align-items: flex-start; }
+.cardDesc { color: rgba(255,255,255,0.5); font-size: 14px; line-height: 1.6; margin-top: 15px; }
+
+/* APP SPECIFIC */
+.appHeader { display: flex; justify-content: space-between; margin-bottom: 25px; }
+.targetJob { font-size: 13px; color: #a855f7; font-weight: 600; margin: 5px 0 0 0; }
+.statusPill { padding: 4px 10px; border-radius: 6px; font-size: 11px; font-weight: 800; background: rgba(255,255,255,0.05); }
+.statusPill[data-status="APPROVED"] { color: #10b981; background: rgba(16,185,129,0.1); }
+.statusPill[data-status="REJECTED"] { color: #ef4444; background: rgba(239,68,68,0.1); }
+
+.appActions { display: flex; flex-direction: column; gap: 15px; }
+.resumeLink { color: #fff; text-decoration: none; font-weight: 700; font-size: 13px; opacity: 0.6; }
+.resumeLink:hover { opacity: 1; color: #a855f7; }
+.btnGroup { display: flex; gap: 10px; }
+.approveBtn, .rejectBtn {
+  flex: 1; padding: 12px; border-radius: 10px; border: none; font-weight: 800; cursor: pointer; transition: 0.2s;
+}
+.approveBtn { background: #10b981; color: #fff; }
+.rejectBtn { background: rgba(239, 68, 68, 0.1); color: #ef4444; border: 1px solid rgba(239, 68, 68, 0.2); }
+.approveBtn:hover { filter: brightness(1.2); }
+.rejectBtn:hover { background: #ef4444; color: #fff; }
+
+/* TABLE */
+.tableWrapper {
+  background: rgba(18, 20, 28, 0.85); border-radius: 24px; border: 1px solid rgba(255,255,255,0.08);
+  overflow: hidden;
+}
+.cleanTable { width: 100%; border-collapse: collapse; }
+.cleanTable th { padding: 20px; text-align: left; background: rgba(255,255,255,0.02); color: rgba(255,255,255,0.4); font-size: 12px; text-transform: uppercase; }
+.cleanTable td { padding: 20px; border-top: 1px solid rgba(255,255,255,0.05); }
+.boldCell { font-weight: 700; color: #fff; }
+.accentText { color: #a855f7; font-weight: 800; }
+
+.deleteLink { background: none; border: none; color: #ef4444; font-size: 11px; cursor: pointer; opacity: 0.6; }
+.deleteLink:hover { opacity: 1; text-decoration: underline; }
+
+
+/* --- NEW PREMIUM COLOR PALETTE --- */
+.dashboardViewport {
+  height: 100vh;
+  width: 100vw;
+  /* Deep oceanic gradient that complements purple accents */
+  background: radial-gradient(circle at 0% 0%, #10141d 0%, #05070a 100%);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: #ffffff;
+  overflow: hidden;
+  position: relative;
+}
+
+/* For the Admin Dashboard: Add a subtle purple glow in the corner to match Login */
+.glowOrb {
+  position: absolute;
+  top: -150px;
+  right: -150px;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(168, 85, 247, 0.08) 0%, transparent 70%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* For the Student Dashboard: Keep the images but darken the overlay */
+.deepVignette {
+  position: absolute;
+  inset: 0;
+  /* This tint makes background images look "integrated" into the UI */
+  background: linear-gradient(
+    to bottom, 
+    rgba(10, 14, 21, 0.85) 0%, 
+    rgba(5, 7, 10, 0.95) 100%
+  );
+  z-index: 1;
+}
+
+/* --- UPDATED COMPONENT CARDS --- */
+.obsidianCard, .professionalCard, .glassCard {
+  /* Using a slightly lighter navy-grey for cards to create depth */
+  background: rgba(255, 255, 255, 0.03); 
+  backdrop-filter: blur(20px) saturate(150%);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.obsidianCard:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(168, 85, 247, 0.4);
+  transform: translateY(-5px);
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+/* --- 1. VIEWPORT & BACKGROUND SLIDER --- */
+.dashboardViewport {
+  height: 100vh; width: 100vw;
+  background: #020617; font-family: 'Plus Jakarta Sans', sans-serif;
+  color: #fff; overflow: hidden; position: relative;
+}
+
+.sliderContainer { position: absolute; inset: 0; z-index: 0; }
+.slide {
+  position: absolute; inset: 0; background-size: cover; background-position: center;
+  opacity: 0; transition: opacity 1.5s ease;
+}
+.active { opacity: 0.4; } /* Adjusted opacity for admin context */
+
+.deepVignette {
+  position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(to bottom, rgba(2, 6, 23, 0.75) 0%, #020617 100%);
+}
+
+.glowOrb {
+  position: absolute; top: -10%; right: -5%; width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(168, 85, 247, 0.15) 0%, transparent 70%);
+  z-index: 2; pointer-events: none;
+}
+
+/* --- 2. TOP NAVIGATION --- */
+.topNav {
+  position: fixed; top: 0; left: 0; right: 0; height: 80px;
+  z-index: 100; backdrop-filter: blur(25px);
+  background: rgba(10, 12, 18, 0.85);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  display: flex; justify-content: center;
+}
+
+.navInner {
+  width: 100%; max-width: 1400px; padding: 0 40px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+
+.brand { font-size: 22px; font-weight: 800; color: #fff; letter-spacing: -1px; }
+.brandLite { color: #a855f7; font-weight: 400; font-size: 16px; margin-left: 5px; }
+
+.centerTabs { display: flex; gap: 8px; }
+.tab, .tabActive {
+  background: transparent; border: none; padding: 10px 20px;
+  font-weight: 600; font-size: 14px; cursor: pointer; transition: 0.3s;
+  border-radius: 12px; color: rgba(255,255,255,0.4);
+}
+.tab:hover { color: #fff; background: rgba(255,255,255,0.05); }
+.tabActive { color: #fff; background: rgba(168, 85, 247, 0.15); box-shadow: 0 0 20px rgba(168, 85, 247, 0.1); }
+
+/* --- 3. INPUT VISIBILITY FIX --- */
+.modernInput {
+  flex: 1; 
+  /* Dark, nearly solid background ensures typing visibility */
+  background: rgba(10, 12, 18, 0.9) !important; 
+  border: 1px solid rgba(255,255,255,0.15);
+  padding: 14px 20px; border-radius: 12px; 
+  color: #fff !important; 
+  font-family: inherit;
+  transition: 0.3s;
+}
+
+.modernInput:focus {
+  background: #000 !important;
+  border-color: #a855f7;
+  outline: none;
+}
+
+.modernInput::placeholder { color: rgba(255,255,255,0.3); }
+
+/* --- 4. LAYOUT & CARDS --- */
+.workspace {
+  position: relative; z-index: 10; padding-top: 110px;
+  height: 100vh; display: flex; flex-direction: column;
+  align-items: center; width: 100%;
+}
+
+.workspaceHeader {
+  width: 100%; max-width: 1200px; padding: 0 40px; margin-bottom: 40px;
+  display: flex; justify-content: space-between; align-items: flex-end;
+}
+.workspaceHeader h1 { 
+  font-size: 42px; font-weight: 800; margin: 0; letter-spacing: -2px; 
+  text-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+
+.createPanel, .obsidianCard {
+  background: rgba(18, 20, 28, 0.8); backdrop-filter: blur(15px);
+  border: 1px solid rgba(255,255,255,0.08); padding: 30px; border-radius: 24px;
+}
+
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); gap: 24px; }
+
+/* --- 5. STATS & BUTTONS --- */
+.statVal { display: block; font-size: 24px; font-weight: 800; color: #a855f7; }
+.createBtn {
+  background: #a855f7; color: #fff; border: none; padding: 0 30px;
+  border-radius: 12px; font-weight: 700; cursor: pointer; transition: 0.3s;
+}
+.createBtn:hover { background: #9333ea; transform: translateY(-2px); }
+
+.scrollContent {
+  width: 100%; max-width: 1200px; padding: 0 40px 100px;
+  overflow-y: auto; scrollbar-width: none;
+}
+
+/* Status Colors */
+.statusPill[data-status="APPROVED"] { color: #10b981; background: rgba(16,185,129,0.1); }
+.statusPill[data-status="REJECTED"] { color: #ef4444; background: rgba(239,68,68,0.1); }
+.approveBtn { background: #10b981; color: #fff; border: none; padding: 10px; border-radius: 8px; cursor: pointer; }
+.rejectBtn { background: rgba(239,68,68,0.1); color: #ef4444; border: 1px solid #ef4444; padding: 10px; border-radius: 8px; cursor: pointer; }

@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+.viewport {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background: #000;
+}
+
+/* --- ADVANCED SLIDER --- */
+.sliderContainer {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transform: scale(1.1); /* Start slightly zoomed in */
+  transition: opacity 1.5s ease-in-out, transform 6s linear;
+}
+
+.slide.active {
+  opacity: 1;
+  transform: scale(1); /* Slow zoom-out effect while active */
+}
+
+.darkOverlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.85) 100%);
+  z-index: 1;
+}
+
+/* --- MAIN LAYOUT --- */
+.mainCard {
+  position: relative;
+  z-index: 10;
+  width: 90%;
+  max-width: 1100px;
+  height: 650px;
+  display: flex;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(25px) saturate(150%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 32px;
+  overflow: hidden;
+  box-shadow: 0 50px 100px -20px rgba(0,0,0,0.6);
+}
+
+/* LEFT SIDE: BRANDING */
+.leftBranding {
+  flex: 1.2;
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #fff;
+}
+
+.tag {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: #818cf8;
+  margin-bottom: 20px;
+}
+
+.title {
+  font-size: 48px;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 24px;
+}
+
+.highlight {
+  background: linear-gradient(to right, #818cf8, #c084fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.description {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.6;
+  max-width: 450px;
+  margin-bottom: 48px;
+}
+
+.statsGrid {
+  display: flex;
+  gap: 40px;
+}
+
+.statBox {
+  display: flex;
+  flex-direction: column;
+}
+
+.statValue {
+  font-size: 28px;
+  font-weight: 800;
+  color: #fff;
+}
+
+.statLabel {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.4);
+  font-weight: 600;
+}
+
+/* RIGHT SIDE: FORM */
+.rightForm {
+  flex: 0.8;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  border-left: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.loginBox {
+  width: 100%;
+  max-width: 340px;
+}
+
+.welcomeText {
+  font-size: 32px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.subText {
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 32px;
+  font-size: 15px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.inputGroup label {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.4);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  letter-spacing: 0.5px;
+}
+
+.inputGroup input {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 14px 16px;
+  color: #fff;
+  font-size: 15px;
+  transition: all 0.3s ease;
+}
+
+.inputGroup input:focus {
+  outline: none;
+  border-color: #818cf8;
+  background: rgba(129, 140, 248, 0.1);
+}
+
+.loginBtn {
+  margin-top: 10px;
+  padding: 16px;
+  background: #fff;
+  color: #000;
+  border: none;
+  border-radius: 12px;
+  font-weight: 800;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.loginBtn:hover {
+  transform: translateY(-2px);
+  background: #818cf8;
+  color: #fff;
+}
+
+.loginBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.registerLink {
+  margin-top: 24px;
+  text-align: center;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.registerLink a {
+  color: #818cf8;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .mainCard { flex-direction: column; height: auto; width: 95%; margin: 20px; }
+  .leftBranding { padding: 40px; }
+  .rightForm { border-left: none; border-top: 1px solid rgba(255,255,255,0.05); padding: 40px; }
+}

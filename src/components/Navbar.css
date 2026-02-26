@@ -1,0 +1,47 @@
+.navbar {
+  background: white;
+  box-shadow: 0 4px 15px rgba(0,0,0,.08);
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 15px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-logo {
+  font-size: 22px;
+  font-weight: 700;
+  color: #2563eb;
+  text-decoration: none;
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: #444;
+  font-weight: 500;
+}
+
+.nav-menu a:hover {
+  color: #2563eb;
+}
+
+.logout-btn {
+  background: #ef4444;
+}
+
+.theme-toggle {
+  border-radius: 50%;
+  background: #f1f5f9;
+  color: black;
+}

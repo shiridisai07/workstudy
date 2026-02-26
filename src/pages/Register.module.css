@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap');
+
+.viewport {
+  height: 100vh; width: 100vw;
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden; position: relative;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background: #000;
+}
+
+/* --- SLIDER LOGIC --- */
+.sliderContainer { position: absolute; inset: 0; z-index: 0; }
+.slide {
+  position: absolute; inset: 0;
+  background-size: cover; background-position: center;
+  opacity: 0; transform: scale(1.15);
+  transition: opacity 1.5s ease-in-out, transform 8s linear;
+}
+.slide.active { opacity: 1; transform: scale(1); }
+.darkOverlay {
+  position: absolute; inset: 0;
+  background: radial-gradient(circle at center, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.85) 100%);
+  z-index: 1;
+}
+
+/* --- MAIN CARD --- */
+.mainCard {
+  position: relative; z-index: 10;
+  width: 90%; max-width: 1150px; height: 720px;
+  display: flex; border-radius: 32px;
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(30px) saturate(150%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  box-shadow: 0 50px 100px -20px rgba(0,0,0,0.6);
+}
+
+.leftBranding {
+  flex: 1.1; padding: 60px;
+  display: flex; flex-direction: column; justify-content: center;
+  color: #fff;
+}
+
+.tag { font-size: 12px; font-weight: 800; letter-spacing: 2px; color: #818cf8; margin-bottom: 20px; }
+.title { font-size: 52px; font-weight: 800; line-height: 1.1; margin-bottom: 24px; }
+.highlight { background: linear-gradient(to right, #818cf8, #c084fc); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.description { font-size: 18px; color: rgba(255, 255, 255, 0.6); line-height: 1.6; margin-bottom: 40px; }
+
+.infoRow { display: flex; gap: 30px; }
+.infoBox { display: flex; align-items: center; gap: 10px; background: rgba(255,255,255,0.05); padding: 10px 20px; border-radius: 12px; }
+.infoText { font-size: 14px; font-weight: 600; }
+
+/* --- RIGHT FORM SECTION --- */
+.rightForm {
+  flex: 0.9; background: rgba(0, 0, 0, 0.5);
+  padding: 50px; display: flex; align-items: center;
+  border-left: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.glassForm { width: 100%; }
+.header h2 { font-size: 32px; color: #fff; margin-bottom: 5px; }
+.header p { color: rgba(255,255,255,0.5); font-size: 14px; margin-bottom: 30px; }
+
+.rolePicker { display: flex; gap: 10px; margin-bottom: 30px; }
+.roleBtn, .roleActive {
+  flex: 1; padding: 12px; border-radius: 12px; font-weight: 700; cursor: pointer; transition: 0.3s;
+  border: 1px solid rgba(255, 255, 255, 0.1); font-size: 13px;
+}
+.roleBtn { background: rgba(255, 255, 255, 0.03); color: #94a3b8; }
+.roleActive { background: #fff; color: #000; border-color: #fff; }
+
+.form { display: flex; flex-direction: column; gap: 18px; }
+.inputGroup label { display: block; font-size: 12px; font-weight: 700; color: rgba(255,255,255,0.4); text-transform: uppercase; margin-bottom: 6px; }
+.inputGroup input {
+  width: 100%; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 14px; border-radius: 12px; color: #fff; transition: 0.3s;
+}
+.inputGroup input:focus { outline: none; border-color: #818cf8; background: rgba(129, 140, 248, 0.1); }
+
+.submitBtn {
+  margin-top: 10px; padding: 16px; background: #818cf8; color: #fff;
+  border: none; border-radius: 12px; font-weight: 800; font-size: 15px; cursor: pointer; transition: 0.3s;
+}
+.submitBtn:hover { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(129, 140, 248, 0.3); }
+
+.loginLink { text-align: center; margin-top: 25px; font-size: 14px; color: rgba(255,255,255,0.5); }
+.loginLink a { color: #818cf8; text-decoration: none; font-weight: 700; }
